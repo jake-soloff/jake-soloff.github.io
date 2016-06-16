@@ -18,18 +18,21 @@
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #a7a7a7;
+  text-decoration: underline;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #a7a7a7;
   background-color: #ffffff;
+  text-decoration: underline;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #a7a7a7;
   background-color: #ffffff;
+  text-decoration: underline;
 }
 .navbar-default .navbar-toggle {
   border-color: #ffffff;
