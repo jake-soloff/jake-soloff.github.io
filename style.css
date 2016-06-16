@@ -50,6 +50,7 @@
 }
 .navbar-default .navbar-link:hover {
   color: #a7a7a7;
+  text-decoration: underline;
 }
 
 @media (max-width: 767px) {
