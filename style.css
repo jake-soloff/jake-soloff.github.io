@@ -71,6 +71,13 @@
   }
 }
 
+
+.centered {
+  text-align: center;
+  margin: 0 auto;
+  width: 42em;
+}
+
 .center-justified {
   text-align: justify;
   margin: 0 auto;
