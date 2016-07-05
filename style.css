@@ -87,5 +87,6 @@
 .left-justified {
   text-align: left;
   margin-left: 5px;
+  margin-top: 10px;
   font-size: 7pt;
 }
