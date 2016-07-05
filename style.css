@@ -84,3 +84,7 @@
   width: 42em;
 }
 
+.left-justified {
+  text-align: left;
+  margin: 0 auto;
+}
