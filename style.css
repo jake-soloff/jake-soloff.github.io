@@ -84,9 +84,12 @@
   width: 42em;
 }
 
+.tab { margin-left: 35px; }
+
 .left-justified {
   text-align: left;
   margin-left: 7px;
   margin-top: 8px;
   font-size: 10px;
+  max-width: 500px;
 }
