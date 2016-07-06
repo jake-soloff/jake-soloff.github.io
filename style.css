@@ -84,7 +84,11 @@
   width: 42em;
 }
 
-.tab { margin-left: 35px; }
+.tab {
+    display: block;
+    padding-left: 1em;
+    text-indent: -1em;
+}
 
 .left-justified {
   text-align: left;
