@@ -2,11 +2,12 @@
 = Jake A. Soloff
 
 == About Me
+
+[img{202}{188} jake.jpg]
+
 I am a PhD candidate in the [https://statistics.berkeley.edu/ Department of Statistics] at 
 UC Berkeley, co-advised by [https://www.stat.berkeley.edu/~aditya/index.html Aditya Guntuboyina] 
 and [https://people.eecs.berkeley.edu/~jordan/ Michael I. Jordan]. Previously, I received an ScB in mathematics at Brown University.
-
-[img{202}{188} jake.jpg]
 
 My current research relates to shape constrained estimation in a variety of contexts, including
 high-dimensional statistics and nonparametric empirical Bayes.
