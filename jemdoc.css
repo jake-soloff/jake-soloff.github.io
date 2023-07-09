@@ -90,9 +90,10 @@ div.menu-item {
 }
 
 div#toptitle {
-    padding-bottom: 0.2em;
+    padding-top: 2em;
+    padding-bottom: 0.1em;
     margin-bottom: 1.5em;
-    border-bottom: 3px double gray;
+    /* border-bottom: 3px double gray; */
 }
 
 /* Reduce space if we begin the page with a title. */
@@ -245,12 +246,12 @@ div.blocktitle {
 }
 
 div.blockcontent {
-    border: 1px solid silver;
-    padding: 0.3em 0.5em;
+    /*border: 1px solid silver;*/
+    padding: 0.3em 10pt;
 }
 
 div.infoblock > div.blockcontent {
-    background: #ffffee;
+    background: white;/*#ffffee;*/
 }
 
 div.blockcontent p + ul, div.blockcontent p + ol {
