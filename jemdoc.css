@@ -1,4 +1,4 @@
-/* Default css file for jemdoc. */
+/* Modified css file for jemdoc. */
 
 table#tlayout {
     border: none;
@@ -248,6 +248,8 @@ div.blocktitle {
 div.blockcontent {
     /*border: 1px solid silver;*/
     padding: 0.3em 10pt;
+    text-indent: -26px;
+    padding-left: 36px;
 }
 
 div.infoblock > div.blockcontent {
@@ -371,4 +373,9 @@ table.imgtable, table.imgtable td {
     display: flex;
     align-items:center;
     text-align:left;
+}
+
+div.a {
+    text-indent: -36px;
+    padding-left: 36px;
 }
