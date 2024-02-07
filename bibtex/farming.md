@@ -1,5 +1,5 @@
 @INPROCEEDINGS{shriver2014farming,
-       author = {{Shriver}, J. and {Soloff}, J.~A. and {Molen}, N.},
+       author = {Shriver, J. and Soloff, J.~A. and Molen, N.},
         title = "{Data Driven Farming: Delivering the Benefits of Remotely Sensed Data and Decision Support Tools to Farmers}",
      keywords = {0402 Agricultural systems, 0480 Remote sensing, 1640 Remote sensing, 1928 GIS science},
     booktitle = {AGU Fall Meeting Abstracts},
