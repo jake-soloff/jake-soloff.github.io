@@ -1,0 +1,13 @@
+@article{10.1093/jrsssb/qkae040,
+    author = {Soloff, Jake A and Guntuboyina, Adityanand and Sen, Bodhisattva},
+    title = "{Multivariate, heteroscedastic empirical Bayes via nonparametric maximum likelihood}",
+    journal = {Journal of the Royal Statistical Society Series B: Statistical Methodology},
+    pages = {qkae040},
+    year = {2024},
+    month = {05},
+    abstract = "{Multivariate, heteroscedastic errors complicate statistical inference in many large-scale denoizing problems. Empirical Bayes is attractive in such settings, but standard parametric approaches rest on assumptions about the form of the prior distribution which can be hard to justify and which introduce unnecessary tuning parameters. We extend the nonparametric maximum-likelihood estimator (NPMLE) for Gaussian location mixture densities to allow for multivariate, heteroscedastic errors. NPMLEs estimate an arbitrary prior by solving an infinite-dimensional, convex optimization problem; we show that this convex optimization problem can be tractably approximated by a finite-dimensional version. The empirical Bayes posterior means based on an NPMLE have low regret, meaning they closely target the oracle posterior means one would compute with the true prior in hand. We prove an oracle inequality implying that the empirical Bayes estimator performs at nearly the optimal level (up to logarithmic factors) for denoizing without prior knowledge. We provide finite-sample bounds on the average Hellinger accuracy of an NPMLE for estimating the marginal densities of the observations. We also demonstrate the adaptive and nearly optimal properties of NPMLEs for deconvolution. We apply our method to two denoizing problems in astronomy and to two hierarchical linear modelling problems in social science and biology.}",
+    issn = {1369-7412},
+    doi = {10.1093/jrsssb/qkae040},
+    url = {https://doi.org/10.1093/jrsssb/qkae040},
+    eprint = {https://academic.oup.com/jrsssb/advance-article-pdf/doi/10.1093/jrsssb/qkae040/57986494/qkae040.pdf},
+}
