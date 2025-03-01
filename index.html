@@ -402,6 +402,31 @@
         margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
         margin-bottom: calc(1rem * var(--tw-space-y-reverse));
     }
+
+    @media (max-width: 768px) {
+        /* Styles that only apply when screen width is 768px or less */
+        .hero-section {
+            padding: 1.5rem 0; /* Less padding on mobile */
+        }
+        
+        .grid-2 {
+            gap: 1rem; /* Smaller gap between grid items on mobile */
+        }
+        
+        .profile-image {
+            width: 14rem; /* Smaller profile image on mobile */
+            height: 14rem;
+        }
+        
+        /* Make cards stack better on mobile */
+        .card {
+            padding: 1rem;
+        }
+
+        .bio-content p {
+            text-align: left;
+        }
+    }
     </style>
 </head>
 <body>
