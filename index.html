@@ -1,57 +1,1136 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake A. Soloff</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap');
+
+        :root {
+            --color-amber-50: #fffbeb;
+            --color-amber-100: #fef3c7;
+            --color-amber-800: #92400e;
+            --color-amber-900: #78350f;
+            --color-rose-50: #fff1f2;
+            --color-rose-800: #9f1239;
+            --color-rose-900: #881337;
+        }
+
+        body {
+            background-color: var(--color-amber-50);
+            font-family: 'Space Mono', monospace;
+            color: var(--color-amber-900);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .nav-container {
+            background-color: var(--color-amber-900);
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: var(--color-amber-50);
+            font-size: 1.25rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .nav-link {
+            color: var(--color-amber-50);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--color-amber-100);
+        }
+
+        /* New dropdown styles */
+        /* .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--color-amber-900);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        } */
+
+        .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--color-amber-900);
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 0.375rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Add padding to create a gap between button and menu */
+    .dropdown-content::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .nav-link {
+        color: var(--color-amber-50);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.3s;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-link:hover {
+        color: var(--color-amber-100);
+    }
+
+        /* Mobile menu styles */
+        .mobile-menu-button {
+            display: block;
+            color: var(--color-amber-50);
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--color-amber-900);
+            padding: 1rem;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+
+        [data-lucide] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            padding-top: 5rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 1rem 0;
+            /* padding: 3rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center; */
+        }
+
+        /* @media (min-width: 768px) {
+            .hero-section {
+                grid-template-columns: auto 1fr;
+                text-align: left;
+            }
+        } */
+
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .bio-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* .bio-content {
+            max-width: 600px;
+        }
+
+        .bio-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .bio-content a {
+            color: var(--color-amber-900);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .bio-content a:hover {
+            color: var(--color-amber-800);
+        } */
+
+        .profile-image-shadow {
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--color-amber-900);
+            transform: translate(0.5rem, 0.5rem);
+        }
+
+        .profile-image {
+            position: relative;
+            width: 26rem;
+            height: 26rem;
+            object-fit: cover;
+            border: 2px solid var(--color-amber-900);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--color-amber-900);
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .card {
+            border: 2px solid var(--color-amber-900);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background-color: var(--color-amber-50);
+        }
+
+        .card-rose {
+            border-color: var(--color-rose-900);
+            background-color: var(--color-rose-50);
+        }
+
+        .card-rose h3 {
+            color: var(--color-rose-900);
+        }
+
+        .card-rose p {
+            color: var(--color-rose-800);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            border: 2px solid var(--color-amber-900);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--color-amber-900);
+            color: var(--color-amber-50);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-amber-800);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-amber-50);
+            color: var(--color-amber-900);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-amber-100);
+        }
+
+        .link-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--color-amber-900);
+        }
+
+        .publication-link {
+            color: var(--color-amber-900);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .publication-link:hover {
+            color: var(--color-amber-800);
+        }
+
+        footer {
+            background-color: var(--color-amber-900);
+            color: var(--color-amber-50);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tldr-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        /*background-color: var(--color-amber-100);*/
+        /*margin: 0 -1rem;*/
+        margin-top: .5rem; /* Add space between links and content */
+    }
+
+    .tldr-content.expanded {
+        max-height: 500px;
+    }
+
+    .tldr-button {
+        background: none;
+        border: none;
+        color: var(--color-amber-900);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.875rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .tldr-button:hover {
+        color: var(--color-amber-800);
+    }
+
+    .chevron-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .chevron-icon.expanded {
+        transform: rotate(180deg);
+    }
+
+    section#publications, section#software {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+    
+    .section-title.mt-12 {
+        margin-top: 1rem;
+    }
+    
+    .space-y-6 {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+    }
+    </style>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-Jake A. Soloff
-<br><br>
-<div class="menu-item"><a href="index.html">home</a></div>
-<div class="menu-item"><a href="research.html">research</a></div>
-<div class="menu-item"><a href="teaching.html">teaching</a></div>
-<div class="menu-item"><a href="software.html">software</a></div>
-</td>
-<td id="layout-content">
 
-  <div class="box" style="width: 710px;">
-<img style="display: inline-block; vertical-align:top" src="Jake-Soloff.jpg" height="280px">
-<span style="margin-left:10px">
-  I am a postdoctoral researcher with <a href="https://rinafb.github.io/" target=&ldquo;blank&rdquo;>Rina Foygel Barber</a> 
-  and <a href="https://willett.psd.uchicago.edu/" target=&ldquo;blank&rdquo;>Rebecca Willett</a> at the University of Chicago. In 2022, I 
-  received my Ph.D. in Statistics from UC Berkeley, advised by <a href="https://www.stat.berkeley.edu/~aditya/index.html" target=&ldquo;blank&rdquo;>Aditya Guntuboyina</a> 
-  and <a href="https://people.eecs.berkeley.edu/~jordan/" target=&ldquo;blank&rdquo;>Michael I. Jordan</a>. I got my Sc.B. in Mathematics from Brown University in 2016. 
-  
-  <br><br>
+   
 
-  My <a href='Soloff_CV.pdf' target=&ldquo;blank&rdquo;>CV</a> and <a href='https://scholar.google.com/citations?user=1KaPl5wAAAAJ&hl=en&oi=ao' target=&ldquo;blank&rdquo;>Google Scholar profile</a>.
-</span>
-</div>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="flex items-center">
+                <!-- <a href="#" class="nav-brand">Jake A. Soloff</a> -->
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-4">
+                
+                <!-- External Links -->
+                <a href="Soloff_CV.pdf" class="nav-link" target="_blank">
+                    <i data-lucide="file-text"></i>
+                    <span>C.V.</span>
+                </a>
+                <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" class="nav-link" target="_blank">
+                    <i data-lucide="library"></i>
+                    <span>Scholar</span>
+                </a>
+                <a href="https://github.com/jake-soloff" class="nav-link" target="_blank">
+                    <i data-lucide="github"></i>
+                    <span>Github</span>
+                </a>
+                <a href="mailto:soloff@g.uchicago.edu" class="nav-link" target="_blank">
+                    <i data-lucide="mail"></i>
+                    <span>Contact</span>
+                </a>
+                
+                <!-- Sections Dropdown -->
+                <div class="dropdown" id="sectionsDropdown">
+                    <button class="nav-link" onclick="toggleDropdown(event)">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#home" class="nav-link">
+                            <i data-lucide="home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#publications" class="nav-link">
+                            <i data-lucide="book-open"></i>
+                            <span>Publications</span>
+                        </a>
+                        <a href="#preprints" class="nav-link">
+                            <i data-lucide="file-text"></i>
+                            <span>Preprints</span>
+                        </a>
+                        <a href="#software" class="nav-link">
+                            <i data-lucide="code"></i>
+                            <span>Software</span>
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleDropdown(event) {
+                        event.stopPropagation();
+                        const dropdown = document.getElementById('sectionsDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(event) {
+                        const dropdown = document.getElementById('sectionsDropdown');
+                        if (!dropdown.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                
+                    // Keep dropdown open when clicking inside
+                    const dropdownContent = document.querySelector('.dropdown-content');
+                    dropdownContent.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                    });
+                </script>
+                
+
+                
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden" id="mobileMenu">
+            <a href="#home" class="nav-link block">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#publications" class="nav-link block">
+                <i data-lucide="book-open"></i>
+                <span>Publications</span>
+            </a>
+            <a href="#preprints" class="nav-link block">
+                <i data-lucide="file-text"></i>
+                <span>Preprints</span>
+            </a>
+            <a href="#software" class="nav-link block">
+                <i data-lucide="code"></i>
+                <span>Software</span>
+            </a>
+            <div class="border-t border-amber-800 my-2"></div>
+            <a href="Soloff_CV.pdf" class="nav-link block" target="_blank">
+                <i data-lucide="file-text"></i>
+                <span>C.V.</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" class="nav-link block" target="_blank">
+                <i data-lucide="library"></i>
+                <span>Scholar</span>
+            </a>
+            <a href="https://github.com/jake-soloff" class="nav-link block" target="_blank">
+                <i data-lucide="github"></i>
+                <span>Github</span>
+            </a>
+            <a href="mailto:soloff@g.uchicago.edu" class="nav-link block" target="_blank">
+                <i data-lucide="mail"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('show');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu.classList.contains('show')) {
+                        mobileMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <main class="container">
+        <section id="home" class="hero-section">
+            <div class="profile-image-container">
+                <div class="profile-image-shadow"></div>
+                <img src="jake-soloff.jpg" alt="Jake Soloff" class="profile-image">
+            </div>
+            
+            <div class="bio-content">
+                <h1 class="section-title">Jake A. Soloff</h1> 
+                <!-- <p>
+                    I am a postdoctoral researcher with <a href="https://rinafb.github.io/" target="_blank">Rina Foygel Barber</a> 
+                    and <a href="https://willett.psd.uchicago.edu/" target="_blank">Rebecca Willett</a> at the University of Chicago. 
+                    In 2022, I received my Ph.D. in Statistics from UC Berkeley, advised by 
+                    <a href="https://www.stat.berkeley.edu/~aditya/index.html" target="_blank">Aditya Guntuboyina</a> 
+                    and <a href="https://people.eecs.berkeley.edu/~jordan/" target="_blank">Michael I. Jordan</a>. 
+                    I got my Sc.B. in Mathematics from Brown University in 2016.<br>
+                </p> -->
+                <p>
+                    I am a postdoctoral researcher at the University of Chicago, broadly interested in the foundations of data science and 
+                    machine learning. In my research, I develop theoretical frameworks 
+                    that enable strong statistical guarantees without restrictive 
+                    assumptions, allowing practitioners to apply rigorous tools 
+                    with minimal tuning and maximal flexibility.
+                </p>
+            </div>
+        </section>
+            
+            
+            <!-- <p class="max-w-2xl mx-auto mb-8"> -->
+                <!-- I am a postdoctoral researcher with <a href="https://rinafb.github.io/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rina Foygel Barber</a> 
+  and <a href="https://willett.psd.uchicago.edu/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rebecca Willett</a> at the University of Chicago. In 2022, I 
+  received my Ph.D. in Statistics from UC Berkeley, advised by <a href="https://www.stat.berkeley.edu/~aditya/index.html" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Aditya Guntuboyina</a> 
+  and <a href="https://people.eecs.berkeley.edu/~jordan/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Michael I. Jordan</a>. I got my Sc.B. in Mathematics from Brown University in 2016. -->
+  <!-- I'm a statistician interested in developing reliable, adaptable tools for modern data analysis. 
+  My research focuses on making machine learning methods more trustworthy and accessible, with a 
+  particular emphasis on algorithmic stability and empirical Bayes approaches. I care deeply about 
+  bridging theoretical rigor with practical utility - creating statistical tools that provide strong 
+  guarantees while remaining flexible enough for real-world applications. Beyond my research, I'm 
+  passionate about teaching statistics and data science, having taught courses ranging from introductory 
+  data science to advanced graduate seminars. -->
+            <!-- </p> -->
+            
+            <!-- <div class="flex justify-center gap-4">
+                <a href="Soloff_CV.pdf" class="btn btn-primary">
+                    <i data-lucide="file-text"></i>
+                    <span>C.V.</span>
+                </a>
+                <a href="mailto:soloff@g.uchicago.edu" class="btn btn-secondary">
+                    <i data-lucide="mail"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="https://github.com/jake-soloff" class="btn btn-primary">
+                    <i data-lucide="github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ&hl=en&oi=ao" class="btn btn-secondary">
+                    <i data-lucide="library"></i>
+                    <span>Google Scholar</span>
+                </a>
+            </div> -->
+
+
+        <section class="grid-2 py-1">
+            <div class="card card-rose">
+                <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
+                    <i data-lucide="briefcase"></i>
+                    <span>Current Position</span>
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <p>Postdoctoral Researcher in Statistics</p>
+                    <p>University of Chicago</p>
+                    <p>Advisors: <a href="https://rinafb.github.io/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rina Foygel Barber</a> 
+                        & <a href="https://willett.psd.uchicago.edu/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rebecca Willett</a></p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
+                    <i data-lucide="graduation-cap"></i>
+                    <span>Education</span>
+                </h2>
+                <div class="space-y-2 text-sm">
+                    <p>Ph.D. in Statistics (2022)</p>
+                    <p>University of California, Berkeley</p>
+                    <p>Advisors: <a href="https://www.stat.berkeley.edu/~aditya/index.html" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Aditya Guntuboyina</a> 
+                        & <a href="https://people.eecs.berkeley.edu/~jordan/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Michael I. Jordan</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="py-12">
+            <!--
+            <h2 class="section-title">
+                <span>Research Interests</span>
+            </h2>
+            <div class="grid-2">
+                <div class="card card-rose">
+                    <h3 class="text-xl mb-3 text-center">Large-scale inference & empirical Bayes</h3>
+                    <p class="text-sm text-center">Developing methods for analyzing large-scale datasets with complex dependency structures.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl mb-3 text-center">Distribution-free uncertainty quantification</h3>
+                    <p class="text-sm text-center">Building reliable uncertainty estimates without restrictive distributional assumptions.</p>
+                </div>
+                <div class="card card-rose">
+                    <h3 class="text-xl mb-3 text-center">Statistical machine learning</h3>
+                    <p class="text-sm text-center">Exploring the theoretical foundations of modern machine learning methods.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl mb-3 text-center">Game theory and statistical inference</h3>
+                    <p class="text-sm text-center">Investigating the intersection of strategic behavior and statistical estimation.</p>
+                </div>
+            </div>
+            -->
+
+            <h2 class="section-title mt-12">
+                <!-- <i data-lucide="scroll-text"></i> -->
+                <span>Select Publications</span>
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- First publication -->
+                <div class="card">
+                    <h3 class="text-xl mb-2">Building a stable classifier with the inflated argmax</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
+                    <p class="text-sm italic mb-4">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2405.14064" class="publication-link">
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://openreview.net/pdf?id=M7zNXntzsp" class="publication-link">
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We introduce a novel approach to building stable classifiers by modifying 
+                                the argmax operator. This method provides robustness against small 
+                                perturbations in the input while maintaining classification accuracy.
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+            
+                <!-- Second publication -->
+                <div class="card">
+                    <h3 class="text-xl mb-2">Bagging provides assumption-free stability</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
+                    <p class="text-sm italic mb-4">Journal of Machine Learning Research, 25(131), 1-35</p>
+                    
+                    <div class="publication-links">
+                        <a href="#" class="publication-link">
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="#" class="publication-link">
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <a href="#" class="publication-link">
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We show that bagging naturally provides stability benefits without 
+                                requiring additional assumptions about the underlying data distribution.
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">The edge of discovery: Controlling the local false discovery rate at the margin</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, D. Xiang, and W. Fithian</p>
+                    <p class="text-sm italic mb-4">Annals of Statistics, 52(2), 580-601</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2207.07299" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="http://dx.doi.org/10.1214/24-AOS2359" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <a href="https://github.com/jake-soloff/maxlfdrPaper" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Multivariate, heteroscedastic empirical Bayes via nonparametric maximum likelihood</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, A. Guntuboyina, and B. Sen</p>
+                    <p class="text-sm italic mb-4">Journal of the Royal Statistical Society: Series B, 87(1), 1-32</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2109.03466" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://academic.oup.com/jrsssb/article-abstract/87/1/1/7684940?redirectedFrom=fulltext" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <a href="https://github.com/jake-soloff/Multivariate_Heteroscedastic_NPMLE" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Distribution-free properties of isotonic regression</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, A. Guntuboyina, and J. Pitman</p>
+                    <p class="text-sm italic mb-4">Electronic Journal of Statistics, 13(2), 3243-3253</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/1812.04249" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://projecteuclid.org/euclid.ejs/1569290688" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+        </section>
+            
+        <section id="preprints" class="py-12">
+            <h2 class="section-title mt-12">
+                <!-- <i data-lucide="scroll-text"></i> -->
+                <span>Preprints</span>
+            </h2>
+
+            
+
+            <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-xl mb-2">Can a calibration metric be both testable and actionable?</h3>
+                    <p class="text-sm mb-2">R. Rossellini, J. A. Soloff, R. F. Barber, Z. Ren, and R. Willett</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2502.19851" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">A frequentist local false discovery rate</h3>
+                    <p class="text-sm mb-2">D. Xiang, J. A. Soloff, and W. Fithian</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2502.16005" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Cross-validation with antithetic Gaussian randomization</h3>
+                    <p class="text-sm mb-2">S. Liu, S. Panigrahi, and J. A. Soloff</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2412.14423" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a> -->
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Stabilizing black-box model selection with the inflated argmax</h3>
+                    <p class="text-sm mb-2">M. Adrian, J. A. Soloff, and R. Willett</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2410.18268" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a> -->
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Testing conditional independence under isotonicity</h3>
+                    <p class="text-sm mb-2">R. Hore, J. A. Soloff, R. F. Barber, and R. J. Samworth</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2501.06133" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a> -->
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Stability via resampling: Statistical problems beyond the real line</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2405.09511" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
+                            <i data-lucide="github"></i>
+                            <span>experiments</span>
+                        </a> -->
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Covariance estimation with nonnegative partial correlations</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, A. Guntuboyina, and M. I. Jordan</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2007.15252" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Incentive-theoretic Bayesian inference for collaborative science</h3>
+                    <p class="text-sm mb-2">S. Bates, M. I. Jordan, M. Sklar, and J. A. Soloff</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2307.03748" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="card">
+                    <h3 class="text-xl mb-2">Principal-agent hypothesis testing</h3>
+                    <p class="text-sm mb-2">S. Bates, M. I. Jordan, M. Sklar, and J. A. Soloff</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2205.06812" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                ???
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
 
 
 
+            </div>
 
-<h2>Contact </h2>
+        </section>
 
-<div class="box" style="width: 710px;">
-<span style="margin-left:10px">
-<p>Department of Statistics<br>
-Jones 211<br>
-5747 S. Ellis Avenue<br>
-Chicago, IL 60637<br><br>
+        <section id="software" class="py-12">
+            <h2 class="section-title">
+                <!--<i data-lucide="code"></i>-->
+                <span>Software</span>
+            </h2>
+            <div class="card card-rose text-center">
+                <h3 class="text-xl mb-4">NPEB</h3>
+                <p class="text-sm mb-6">
+                    A Python package for empirical Bayes using nonparametric maximum likelihood
+                </p>
+                <a href="https://github.com/jake-soloff/npeb" class="btn btn-primary" target=&ldquo;blank&rdquo;>
+                    <i data-lucide="github"></i>
+                    <span>View on GitHub</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
-Email: <a href = "mailto: soloff@g.uchicago.edu">soloff@g.uchicago.edu</a></p>
-</span>
-</div>
-</td>
-</tr>
-</table>
+    <footer>
+        <div class="container">
+            <div class="contact-info mb-4">
+                <i data-lucide="map-pin"></i>
+                <span>Department of Statistics, University of Chicago</span>
+            </div>
+            <p class="text-sm">© 2025 Jake A. Soloff</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+
+<script>
+    function toggleTldr(button) {
+    // Go up to find the card, then find the tldr-content within it
+    const card = button.closest('.card');
+    const content = card.querySelector('.tldr-content');
+    const chevron = button.querySelector('.chevron-icon');
+    
+    content.classList.toggle('expanded');
+    chevron.classList.toggle('expanded');
+    }
+</script>
+
 </body>
 </html>
-
-
