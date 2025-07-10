@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Jake A. Soloff</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap');
 
         :root {
@@ -44,12 +44,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .nav-brand {
-            color: var(--color-amber-50);
-            font-size: 1.25rem;
-            font-family: 'Libre Baskerville', serif;
         }
 
         .nav-link {
@@ -169,7 +163,7 @@
             max-width: 1024px;
             margin: 0 auto;
             padding: 0 1rem;
-            padding-top: 5rem;
+            padding-top: 7rem;
         }
 
         .hero-section {
@@ -336,13 +330,7 @@
             color: var(--color-amber-800);
         }
 
-        footer {
-            background-color: var(--color-amber-900);
-            color: var(--color-amber-50);
-            padding: 2rem 0;
-            margin-top: 3rem;
-            text-align: center;
-        }
+        
 
         .contact-info {
             display: flex;
@@ -434,881 +422,92 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
 </head>
+</head>
 <body>
 
-   
-
-    <nav class="nav-container">
-        <div class="nav-content">
-            <div class="flex items-center">
-                <!-- <a href="#" class="nav-brand">Jake A. Soloff</a> -->
-            </div>
-
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-4">
-                
-                <!-- External Links -->
-                <a href="Soloff_CV.pdf" class="nav-link" target="_blank">
-                    <i data-lucide="file-text"></i>
-                    <span>C.V.</span>
-                </a>
-                <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" class="nav-link" target="_blank">
-                    <i data-lucide="library"></i>
-                    <span>Scholar</span>
-                </a>
-                <a href="https://github.com/jake-soloff" class="nav-link" target="_blank">
-                    <i data-lucide="github"></i>
-                    <span>Github</span>
-                </a>
-                <a href="mailto:soloff@g.uchicago.edu" class="nav-link" target="_blank">
-                    <i data-lucide="mail"></i>
-                    <span>Contact</span>
-                </a>
-                
-                <!-- Sections Dropdown -->
-                <div class="dropdown" id="sectionsDropdown">
-                    <button class="nav-link" onclick="toggleDropdown(event)">
-                        <i data-lucide="menu"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#home" class="nav-link">
-                            <i data-lucide="home"></i>
-                            <span>Home</span>
-                        </a>
-                        <a href="#publications" class="nav-link">
-                            <i data-lucide="book-open"></i>
-                            <span>Publications</span>
-                        </a>
-                        <a href="#preprints" class="nav-link">
-                            <i data-lucide="file-text"></i>
-                            <span>Preprints</span>
-                        </a>
-                        <a href="#software" class="nav-link">
-                            <i data-lucide="code"></i>
-                            <span>Software</span>
-                        </a>
-                    </div>
-                </div>
-
-                <script>
-                    function toggleDropdown(event) {
-                        event.stopPropagation();
-                        const dropdown = document.getElementById('sectionsDropdown');
-                        dropdown.classList.toggle('active');
-                    }
-                
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', function(event) {
-                        const dropdown = document.getElementById('sectionsDropdown');
-                        if (!dropdown.contains(event.target)) {
-                            dropdown.classList.remove('active');
-                        }
-                    });
-                
-                    // Keep dropdown open when clicking inside
-                    const dropdownContent = document.querySelector('.dropdown-content');
-                    dropdownContent.addEventListener('click', function(event) {
-                        event.stopPropagation();
-                    });
-                </script>
-                
-
-                
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-button md:hidden" onclick="toggleMobileMenu()">
-                <i data-lucide="menu"></i>
-            </button>
+    <!-- Top Bar -->
+    <nav class="bg-amber-900 text-amber-50 w-full py-4 px-6 fixed top-0 left-0 z-50 flex justify-between items-center">
+        <!-- Left: Name + Title -->
+        <div>
+            <a href="index.html" class="text-2xl font-bold font-serif text-amber-50 hover:text-amber-100"> Jake A. Soloff </a>
+            <p class="text text-amber-100">Assistant Professor @ UMich</p>
         </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu md:hidden" id="mobileMenu">
-            <a href="#home" class="nav-link block">
-                <i data-lucide="home"></i>
-                <span>Home</span>
-            </a>
-            <a href="#publications" class="nav-link block">
-                <i data-lucide="book-open"></i>
-                <span>Publications</span>
-            </a>
-            <a href="#preprints" class="nav-link block">
-                <i data-lucide="file-text"></i>
-                <span>Preprints</span>
-            </a>
-            <a href="#software" class="nav-link block">
-                <i data-lucide="code"></i>
-                <span>Software</span>
-            </a>
-            <div class="border-t border-amber-800 my-2"></div>
-            <a href="Soloff_CV.pdf" class="nav-link block" target="_blank">
-                <i data-lucide="file-text"></i>
-                <span>C.V.</span>
-            </a>
-            <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" class="nav-link block" target="_blank">
-                <i data-lucide="library"></i>
-                <span>Scholar</span>
-            </a>
-            <a href="https://github.com/jake-soloff" class="nav-link block" target="_blank">
-                <i data-lucide="github"></i>
-                <span>Github</span>
-            </a>
-            <a href="mailto:soloff@g.uchicago.edu" class="nav-link block" target="_blank">
-                <i data-lucide="mail"></i>
-                <span>Contact</span>
-            </a>
+        <!-- Right: Navigation Links -->
+        <div class="flex space-x-10 pt-1">
+        <a href="Soloff_CV.pdf" class="flex items-center gap-1 hover:text-amber-100" target="_blank">
+            <i data-lucide="file-text"></i>
+            <span>CV</span>
+        </a>
+        <a href="research.html" class="flex items-center gap-1 hover:text-amber-100">
+            <i data-lucide="book-open"></i>
+            <span>Research</span>
+        </a>
+        <!-- <a href="teaching.html" class="flex items-center gap-1 hover:text-amber-100">
+            <i data-lucide="graduation-cap"></i>
+            <span>Teaching</span>
+        </a> -->
         </div>
     </nav>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('show');
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    if (mobileMenu.classList.contains('show')) {
-                        mobileMenu.classList.remove('show');
-                    }
-                }
-            });
-        });
-    </script>
-
+    <!-- Main Content -->
     <main class="container">
-        <section id="home" class="hero-section">
-            <div class="profile-image-container">
-                <div class="profile-image-shadow"></div>
-                <img src="Jake-Soloff.jpg" alt="Jake Soloff" class="profile-image">
-            </div>
-            
-            <div class="bio-content">
-                <h1 class="section-title">Jake A. Soloff</h1> 
-                <!-- <p>
-                    I am a postdoctoral researcher with <a href="https://rinafb.github.io/" target="_blank">Rina Foygel Barber</a> 
-                    and <a href="https://willett.psd.uchicago.edu/" target="_blank">Rebecca Willett</a> at the University of Chicago. 
-                    In 2022, I received my Ph.D. in Statistics from UC Berkeley, advised by 
-                    <a href="https://www.stat.berkeley.edu/~aditya/index.html" target="_blank">Aditya Guntuboyina</a> 
-                    and <a href="https://people.eecs.berkeley.edu/~jordan/" target="_blank">Michael I. Jordan</a>. 
-                    I got my Sc.B. in Mathematics from Brown University in 2016.<br>
-                </p> -->
-                <p>
-                    I am a postdoctoral researcher at the University of Chicago, broadly interested in the foundations of data science and 
-                    machine learning. In my research, I develop theoretical frameworks 
-                    that enable strong statistical guarantees without restrictive 
-                    assumptions, allowing practitioners to apply rigorous tools 
-                    with minimal tuning and maximal flexibility. <br><br>
-
-                    Starting this fall, I will join the University of Michigan as an assistant professor of statistics. 
+        <section class="flex flex-col md:flex-row items-center md:items-start md:space-x-8 text-left">
+            <img src="Jake-Soloff.jpg" alt="Jake A. Soloff"
+                 class="rounded-full object-cover border-4 border-yellow-900 mb-6 md:mb-0"
+                 style="width: 100%; max-width: 450px; height: auto; aspect-ratio: 1 / 1;" />
+            <div>
+                <h1 class="text-5xl font-bold font-serif text-amber-900">Jake A. Soloff</h1>
+                <br>
+                <p class="mt-4 text-base leading-relaxed">
+                    I am an assistant professor of statistics at the 
+                    University of Michigan. My research examines the theoretical 
+                    and philosophical foundations of statistical machine learning, 
+                    aiming to develop methods that are both principled and broadly 
+                    applicable.<br/><br/>
+                    Previously, I received my PhD in statistics from UC Berkeley 
+                    in 2022, advised by Aditya Guntuboyina and Michael I. Jordan, 
+                    and completed a postdoc at the University of Chicago with Rina 
+                    Foygel Barber and Rebecca Willett. 
                 </p>
-            </div>
-        </section>
-            
-            
-            <!-- <p class="max-w-2xl mx-auto mb-8"> -->
-                <!-- I am a postdoctoral researcher with <a href="https://rinafb.github.io/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rina Foygel Barber</a> 
-  and <a href="https://willett.psd.uchicago.edu/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rebecca Willett</a> at the University of Chicago. In 2022, I 
-  received my Ph.D. in Statistics from UC Berkeley, advised by <a href="https://www.stat.berkeley.edu/~aditya/index.html" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Aditya Guntuboyina</a> 
-  and <a href="https://people.eecs.berkeley.edu/~jordan/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Michael I. Jordan</a>. I got my Sc.B. in Mathematics from Brown University in 2016. -->
-  <!-- I'm a statistician interested in developing reliable, adaptable tools for modern data analysis. 
-  My research focuses on making machine learning methods more trustworthy and accessible, with a 
-  particular emphasis on algorithmic stability and empirical Bayes approaches. I care deeply about 
-  bridging theoretical rigor with practical utility - creating statistical tools that provide strong 
-  guarantees while remaining flexible enough for real-world applications. Beyond my research, I'm 
-  passionate about teaching statistics and data science, having taught courses ranging from introductory 
-  data science to advanced graduate seminars. -->
-            <!-- </p> -->
-            
-            <!-- <div class="flex justify-center gap-4">
-                <a href="Soloff_CV.pdf" class="btn btn-primary">
-                    <i data-lucide="file-text"></i>
-                    <span>C.V.</span>
-                </a>
-                <a href="mailto:soloff@g.uchicago.edu" class="btn btn-secondary">
+
+                <br/>
+
+                <!-- Icon Row -->
+                <div class="flex items-center space-x-10">
+                <a href="mailto:soloff@umich.edu" class="flex items-center gap-1 hover:text-amber-100">
                     <i data-lucide="mail"></i>
-                    <span>Contact</span>
+                    <span>Email</span>
                 </a>
-                <a href="https://github.com/jake-soloff" class="btn btn-primary">
+                <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" target="_blank" class="flex items-center gap-1 hover:text-amber-100">
+                    <i data-lucide="library"></i>
+                    <span>Scholar</span>
+                </a>
+                <a href="https://github.com/jake-soloff" target="_blank" class="flex items-center gap-1 hover:text-amber-100">
                     <i data-lucide="github"></i>
                     <span>GitHub</span>
                 </a>
-                <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ&hl=en&oi=ao" class="btn btn-secondary">
-                    <i data-lucide="library"></i>
-                    <span>Google Scholar</span>
-                </a>
-            </div> -->
-
-
-        <section class="grid-2 py-1">
-            <div class="card card-rose">
-                <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
-                    <i data-lucide="briefcase"></i>
-                    <span>Current Position</span>
-                </h2>
-                <div class="space-y-2 text-sm">
-                    <p>Postdoctoral Researcher in Statistics</p>
-                    <p>University of Chicago</p>
-                    <p>Advisors: <a href="https://rinafb.github.io/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rina Foygel Barber</a> 
-                        & <a href="https://willett.psd.uchicago.edu/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Rebecca Willett</a></p>
                 </div>
             </div>
-            
-            <div class="card">
-                <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
-                    <i data-lucide="graduation-cap"></i>
-                    <span>Education</span>
-                </h2>
-                <div class="space-y-2 text-sm">
-                    <p>Ph.D. in Statistics (2022)</p>
-                    <p>University of California, Berkeley</p>
-                    <p>Advisors: <a href="https://www.stat.berkeley.edu/~aditya/index.html" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Aditya Guntuboyina</a> 
-                        & <a href="https://people.eecs.berkeley.edu/~jordan/" class="text-amber-900 hover:text-amber-800" target=&ldquo;blank&rdquo;>Michael I. Jordan</a></p>
-                </div>
-            </div>
-        </section>
 
-        <section id="publications" class="py-12">
-            <!--
-            <h2 class="section-title">
-                <span>Research Interests</span>
-            </h2>
-            <div class="grid-2">
-                <div class="card card-rose">
-                    <h3 class="text-xl mb-3 text-center">Large-scale inference & empirical Bayes</h3>
-                    <p class="text-sm text-center">Developing methods for analyzing large-scale datasets with complex dependency structures.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl mb-3 text-center">Distribution-free uncertainty quantification</h3>
-                    <p class="text-sm text-center">Building reliable uncertainty estimates without restrictive distributional assumptions.</p>
-                </div>
-                <div class="card card-rose">
-                    <h3 class="text-xl mb-3 text-center">Statistical machine learning</h3>
-                    <p class="text-sm text-center">Exploring the theoretical foundations of modern machine learning methods.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl mb-3 text-center">Game theory and statistical inference</h3>
-                    <p class="text-sm text-center">Investigating the intersection of strategic behavior and statistical estimation.</p>
-                </div>
-            </div>
-            -->
-
-            <h2 class="section-title mt-12">
-                <!-- <i data-lucide="scroll-text"></i> -->
-                <span>Select Publications</span>
-            </h2>
-            
-            <div class="space-y-6">
-                <!-- First publication -->
-                <div class="card">
-                    <h3 class="text-xl mb-2">Can a calibration metric be both testable and actionable?</h3>
-                    <p class="text-sm mb-2">R. Rossellini, J. A. Soloff, R. F. Barber, Z. Ren, and R. Willett</p>
-                    <p class="text-sm italic mb-4">To appear in the 38th Annual Conference on Learning Theory (COLT 2025)</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2502.19851" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <a href="https://github.com/rrross/CutoffCalibration" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Forecast probabilities often serve as critical inputs for binary decision making. In such settings, calibration &mdash;
-                                ensuring forecasted probabilities match empirical frequencies &mdash; is essential. Although the common notion of Expected 
-                                Calibration Error (ECE) provides actionable insights for decision making, it is not testable: it cannot be empirically 
-                                estimated in many practical cases. Conversely, the recently proposed Distance from Calibration (dCE) is testable but is 
-                                not actionable since it lacks decision-theoretic guarantees needed for high-stakes applications. We introduce Cutoff 
-                                Calibration Error, a calibration measure that bridges this gap by assessing calibration over intervals of forecasted 
-                                probabilities. We show that Cutoff Calibration Error is both testable and actionable and examine its implications for 
-                                popular post-hoc calibration methods, such as isotonic regression and Platt scaling.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Building a stable classifier with the inflated argmax</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
-                    <p class="text-sm italic mb-4">Advances in Neural Information Processing Systems 37 (NeurIPS 2024)</p>
-                    
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2405.14064" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <a href="https://openreview.net/pdf?id=M7zNXntzsp" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="book-open"></i>
-                            <span>paper</span>
-                        </a>
-                        <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We propose a new framework for algorithmic stability in the context of multiclass classification. In practice, 
-                                classification algorithms often operate by first assigning a continuous score (for instance, an estimated probability) 
-                                to each possible label, then taking the maximizer &mdash; i.e., selecting the class that has the highest score. A 
-                                drawback of this type of approach is that it is inherently unstable, meaning that it is very sensitive to slight 
-                                perturbations of the training data, since taking the maximizer is discontinuous. Motivated by this challenge, we 
-                                propose a pipeline for constructing stable classifiers from data, using bagging (i.e., resampling and averaging) to 
-                                produce stable continuous scores, and then using a stable relaxation of argmax, which we call the "inflated argmax," 
-                                to convert these scores to a set of candidate labels. The resulting stability guarantee places no distributional 
-                                assumptions on the data, does not depend on the number of classes or dimensionality of the covariates, and holds for 
-                                any base classifier. Using a common benchmark data set, we demonstrate that the inflated argmax provides necessary 
-                                protection against unstable classifiers, without loss of accuracy.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Second publication -->
-                <div class="card">
-                    <h3 class="text-xl mb-2">Bagging provides assumption-free stability</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
-                    <p class="text-sm italic mb-4">Journal of Machine Learning Research, 25(131), 1-35</p>
-                    
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2301.12600" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <a href="https://www.jmlr.org/papers/volume25/23-0536/23-0536.pdf" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="book-open"></i>
-                            <span>paper</span>
-                        </a>
-                        <a href="https://github.com/jake-soloff/subbagging-experiments" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Bagging is an important technique for stabilizing machine learning models. In this paper, we
-                                derive a finite-sample guarantee on the stability of bagging for any model. Our result places
-                                no assumptions on the distribution of the data, on the properties of the base algorithm, or
-                                on the dimensionality of the covariates. Our guarantee applies to many variants of bagging
-                                and is optimal up to a constant. Empirical results validate our findings, showing that
-                                bagging successfully stabilizes even highly unstable base algorithms.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">The edge of discovery: Controlling the local false discovery rate at the margin</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, D. Xiang, and W. Fithian</p>
-                    <p class="text-sm italic mb-4">Annals of Statistics, 52(2), 580-601</p>
-                    
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2207.07299" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <a href="http://dx.doi.org/10.1214/24-AOS2359" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="book-open"></i>
-                            <span>paper</span>
-                        </a>
-                        <a href="https://github.com/jake-soloff/maxlfdrPaper" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Despite the popularity of the false discovery rate (FDR) as an error control metric for large-scale multiple 
-                                testing, its close Bayesian counterpart the local false discovery rate (lfdr), defined as the posterior 
-                                probability that a particular null hypothesis is false, is a more directly relevant standard for justifying and 
-                                interpreting individual rejections. However, the lfdr is difficult to work with in small samples, as the prior 
-                                distribution is typically unknown. We propose a simple multiple testing procedure and prove that it controls the 
-                                expectation of the maximum lfdr across all rejections; equivalently, it controls the probability that the 
-                                rejection with the largest p-value is a false discovery. Our method operates without knowledge of the prior, 
-                                assuming only that the p-value density is uniform under the null and decreasing under the alternative. We also 
-                                show that our method asymptotically implements the oracle Bayes procedure for a weighted classification risk, 
-                                optimally trading off between false positives and false negatives. We derive the limiting distribution of the 
-                                attained maximum lfdr over the rejections, and the limiting empirical Bayes regret relative to the oracle procedure.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Multivariate, heteroscedastic empirical Bayes via nonparametric maximum likelihood</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, A. Guntuboyina, and B. Sen</p>
-                    <p class="text-sm italic mb-4">Journal of the Royal Statistical Society: Series B, 87(1), 1-32</p>
-                    
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2109.03466" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <a href="https://academic.oup.com/jrsssb/article-abstract/87/1/1/7684940?redirectedFrom=fulltext" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="book-open"></i>
-                            <span>paper</span>
-                        </a>
-                        <a href="https://github.com/jake-soloff/Multivariate_Heteroscedastic_NPMLE" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Multivariate, heteroscedastic errors complicate statistical inference in many large-scale denoizing problems. 
-                                Empirical Bayes is attractive in such settings, but standard parametric approaches rest on assumptions about the 
-                                form of the prior distribution which can be hard to justify and which introduce unnecessary tuning parameters. We 
-                                extend the nonparametric maximum-likelihood estimator (NPMLE) for Gaussian location mixture densities to allow for 
-                                multivariate, heteroscedastic errors. NPMLEs estimate an arbitrary prior by solving an infinite-dimensional, convex 
-                                optimization problem; we show that this convex optimization problem can be tractably approximated by a finite-dimensional 
-                                version. The empirical Bayes posterior means based on an NPMLE have low regret, meaning they closely target the oracle 
-                                posterior means one would compute with the true prior in hand. We prove an oracle inequality implying that the empirical 
-                                Bayes estimator performs at nearly the optimal level (up to logarithmic factors) for denoizing without prior knowledge. 
-                                We provide finite-sample bounds on the average Hellinger accuracy of an NPMLE for estimating the marginal densities of 
-                                the observations. We also demonstrate the adaptive and nearly optimal properties of NPMLEs for deconvolution. We apply 
-                                our method to two denoizing problems in astronomy and to two hierarchical linear modelling problems in social science and 
-                                biology.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Distribution-free properties of isotonic regression</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, A. Guntuboyina, and J. Pitman</p>
-                    <p class="text-sm italic mb-4">Electronic Journal of Statistics, 13(2), 3243-3253</p>
-                    
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/1812.04249" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <a href="https://projecteuclid.org/euclid.ejs/1569290688" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="book-open"></i>
-                            <span>paper</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                It is well known that the isotonic least squares estimator is characterized as the derivative of the greatest 
-                                convex minorant of a random walk. Provided the walk has exchangeable increments, we prove that the slopes of 
-                                the greatest convex minorant are distributed as order statistics of the running averages. This result implies 
-                                an exact non-asymptotic formula for the squared error risk of least squares in homoscedastic isotonic regression 
-                                when the true sequence is constant that holds for every exchangeable error distribution.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-            
-        <section id="preprints" class="py-12">
-            <h2 class="section-title mt-12">
-                <!-- <i data-lucide="scroll-text"></i> -->
-                <span>Preprints</span>
-            </h2>
-
-            
-
-            <div class="space-y-6">
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Assumption-free stability for ranking problems</h3>
-                    <p class="text-sm mb-2">R. Liang, J. A. Soloff, R. F. Barber, and R. Willett</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2506.02257" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                In this work, we consider ranking problems among a finite set of candidates: for instance, selecting the top-\(k\) items among a 
-                                larger list of candidates or obtaining the full ranking of all items in the set. These problems are often unstable, in the 
-                                sense that estimating a ranking from noisy data can exhibit high sensitivity to small perturbations. Concretely, if we use 
-                                data to provide a score for each item (say, by aggregating preference data over a sample of users), then for two items with 
-                                similar scores, small fluctuations in the data can alter the relative ranking of those items. Many existing theoretical 
-                                results for ranking problems assume a separation condition to avoid this challenge, but real-world data often contains items 
-                                whose scores are approximately tied, limiting the applicability of existing theory. To address this gap, we develop a new 
-                                algorithmic stability framework for ranking problems, and propose two novel ranking operators for achieving stable ranking: 
-                                the inflated top-\(k\) for the top-\(k\) selection problem and the inflated full ranking for ranking the full list. To 
-                                enable stability, each method allows for expressing some uncertainty in the output. For both of these two problems, our 
-                                proposed methods provide guaranteed stability, with no assumptions on data distributions and no dependence on the total number 
-                                of candidates to be ranked. Experiments on real-world data confirm that the proposed methods offer stability without compromising 
-                                the informativeness of the output.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">A frequentist local false discovery rate</h3>
-                    <p class="text-sm mb-2">D. Xiang, J. A. Soloff, and W. Fithian</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2502.16005" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                The local false discovery rate (lfdr) of Efron et al. (2001) enjoys major conceptual and decision-theoretic advantages over 
-                                the false discovery rate (FDR) as an error criterion in multiple testing, but is only well-defined in Bayesian models where 
-                                the truth status of each null hypothesis is random. We define a frequentist counterpart to the lfdr based on the relative 
-                                frequency of nulls at each point in the sample space. The frequentist lfdr is defined without reference to any prior, but 
-                                preserves several important properties of the Bayesian lfdr: For continuous test statistics, \(\text{lfdr}(t)\) gives the probability, 
-                                conditional on observing some statistic equal to \(t\), that the corresponding null hypothesis is true. Evaluating the lfdr at 
-                                an individual test statistic also yields a calibrated forecast of whether its null hypothesis is true. Finally, thresholding 
-                                the lfdr at \( \frac{1}{1+\lambda} \) gives the best separable rejection rule under the weighted classification loss where Type I errors are \(\lambda\)
-                                times as costly as Type II errors. The lfdr can be estimated efficiently using parametric or non-parametric methods, and a 
-                                closely related error criterion can be provably controlled in finite samples under independence assumptions. Whereas the FDR 
-                                measures the average quality of all discoveries in a given rejection region, our lfdr measures how the quality of discoveries 
-                                varies across the rejection region, allowing for a more fine-grained analysis without requiring the introduction of a prior.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Cross-validation with antithetic Gaussian randomization</h3>
-                    <p class="text-sm mb-2">S. Liu, S. Panigrahi, and J. A. Soloff</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2412.14423" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a> -->
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We introduce a new cross-validation method based on an equicorrelated Gaussian randomization scheme. The method is well-suited 
-                                for problems where sample splitting is infeasible, such as when data violate the assumption of independent and identical 
-                                distribution. Even when sample splitting is possible, our method offers a computationally efficient alternative for estimating 
-                                the prediction error, achieving comparable or even lower error than standard cross-validation in a few train-test repetitions. 
-                                Drawing inspiration from recent techniques like data-fission and data-thinning, our method constructs train-test data pairs 
-                                using externally generated Gaussian randomization variables. The key innovation lies in a carefully designed correlation 
-                                structure among the randomization variables, which we refer to as antithetic Gaussian randomization. In theory, we show that 
-                                this correlation is crucial in ensuring that the variance of our estimator remains bounded while allowing the bias to vanish. 
-                                Through simulations on various data types and loss functions, we highlight the advantages of our antithetic Gaussian randomization 
-                                scheme over both independent randomization and standard cross-validation, where the bias-variance tradeoff depends heavily on 
-                                the number of folds.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Stabilizing black-box model selection with the inflated argmax</h3>
-                    <p class="text-sm mb-2">M. Adrian, J. A. Soloff, and R. Willett</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2410.18268" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a> -->
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Model selection is the process of choosing from a class of candidate models given data. For instance, methods such as the 
-                                LASSO and sparse identification of nonlinear dynamics (SINDy) formulate model selection as finding a sparse solution to a 
-                                linear system of equations determined by training data. However, absent strong assumptions, such methods are highly unstable: 
-                                if a single data point is removed from the training set, a different model may be selected. In this paper, we present a new 
-                                approach to stabilizing model selection with theoretical stability guarantees that leverages a combination of bagging and an 
-                                "inflated" argmax operation. Our method selects a small collection of models that all fit the data, and it is stable in that, 
-                                with high probability, the removal of any training point will result in a collection of selected models that overlaps with the 
-                                original collection. We illustrate this method in (a) a simulation in which strongly correlated covariates make standard LASSO 
-                                model selection highly unstable, (b) a Lotka-Volterra model selection problem focused on identifying how competition in an 
-                                ecosystem influences species' abundances, and (c) a graph subset selection problem using cell-signaling data from proteomics. 
-                                In these settings, the proposed method yields stable, compact, and accurate collections of selected models, outperforming a 
-                                variety of benchmarks.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Testing conditional independence under isotonicity</h3>
-                    <p class="text-sm mb-2">R. Hore, J. A. Soloff, R. F. Barber, and R. J. Samworth</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2501.06133" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a> -->
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We propose a test of the conditional independence of random variables \(X\) and \(Y\) given \(Z\) under the additional assumption that \(X\) is 
-                                stochastically increasing in \(Z\). The well-documented hardness of testing conditional independence means that some further 
-                                restriction on the null hypothesis parameter space is required, but in contrast to existing approaches based on parametric 
-                                models, smoothness assumptions, or approximations to the conditional distribution of \(X\) given \(Z\) and/or \(Y\) given \(Z\), our test 
-                                requires only the stochastic monotonicity assumption. Our procedure, called PairSwap-ICI, determines the significance of a 
-                                statistic by randomly swapping the \(X\) values within ordered pairs of \(Z\) values. The matched pairs and the test statistic may 
-                                depend on both \(Y\) and \(Z\), providing the analyst with significant flexibility in constructing a powerful test. Our test offers 
-                                finite-sample Type I error control, and provably achieves high power against a large class of alternatives that are not too 
-                                close to the null. We validate our theoretical findings through a series of simulations and real data experiments.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Stability via resampling: Statistical problems beyond the real line</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2405.09511" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
-                            <i data-lucide="github"></i>
-                            <span>experiments</span>
-                        </a> -->
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Model averaging techniques based on resampling methods (such as bootstrapping or subsampling) have been utilized across many areas of 
-                                statistics, often with the explicit goal of promoting stability in the resulting output. We provide a general, finite-sample theoretical 
-                                result guaranteeing the stability of bagging when applied to algorithms that return outputs in a general space, so that the output is 
-                                not necessarily a real-valued &mdash; for example, an algorithm that estimates a vector of weights or a density function. We empirically 
-                                assess the stability of bagging on synthetic and real-world data for a range of problem settings, including causal inference, nonparametric 
-                                regression, and Bayesian model selection.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Covariance estimation with nonnegative partial correlations</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, A. Guntuboyina, and M. I. Jordan</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2007.15252" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We study the problem of high-dimensional covariance estimation under the constraint that the partial correlations are nonnegative. 
-                                The sign constraints dramatically simplify estimation: the Gaussian maximum likelihood estimator is well defined with only two 
-                                observations regardless of the number of variables. We analyze its performance in the setting where the dimension may be much 
-                                larger than the sample size. We establish that the estimator is both high-dimensionally consistent and minimax optimal in the 
-                                symmetrized Stein loss. We also prove a negative result which shows that the sign-constraints can introduce substantial bias 
-                                for estimating the top eigenvalue of the covariance matrix.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Incentive-theoretic Bayesian inference for collaborative science</h3>
-                    <p class="text-sm mb-2">S. Bates, M. I. Jordan, M. Sklar, and J. A. Soloff</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2307.03748" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Contemporary scientific research is a distributed, collaborative endeavor, carried out by teams of researchers, regulatory 
-                                institutions, funding agencies, commercial partners, and scientific bodies, all interacting with each other and facing 
-                                different incentives. To maintain scientific rigor, statistical methods should acknowledge this state of affairs. To this end, 
-                                we study hypothesis testing when there is an agent (e.g., a researcher or a pharmaceutical company) with a private prior about 
-                                an unknown parameter and a principal (e.g., a policymaker or regulator) who wishes to make decisions based on the parameter 
-                                value. The agent chooses whether to run a statistical trial based on their private prior and then the result of the trial is 
-                                used by the principal to reach a decision. We show how the principal can conduct statistical inference that leverages the 
-                                information that is revealed by an agent's strategic behavior &mdash; their choice to run a trial or not. In particular, we show 
-                                how the principal can design a policy to elucidate partial information about the agent's private prior beliefs and use this 
-                                to control the posterior probability of the null. One implication is a simple guideline for the choice of significance threshold 
-                                in clinical trials: the type-I error level should be set to be strictly less than the cost of the trial divided by the firm's 
-                                profit if the trial is successful.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl mb-2">Principal-agent hypothesis testing</h3>
-                    <p class="text-sm mb-2">S. Bates, M. I. Jordan, M. Sklar, and J. A. Soloff</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2205.06812" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Consider the relationship between a regulator (the principal) and an experimenter (the agent) such as a pharmaceutical company. 
-                                The pharmaceutical company wishes to sell a drug for profit, whereas the regulator wishes to allow only efficacious drugs to be 
-                                marketed. The efficacy of the drug is not known to the regulator, so the pharmaceutical company must run a costly trial to 
-                                prove efficacy to the regulator. Critically, the statistical protocol used to establish efficacy affects the behavior of a 
-                                strategic, self-interested agent; a lower standard of statistical evidence incentivizes the agent to run more trials that are 
-                                less likely to be effective. The interaction between the statistical protocol and the incentives of the pharmaceutical company 
-                                is crucial for understanding this system and designing protocols with high social utility. In this work, we discuss how the 
-                                regulator can set up a protocol with payoffs based on statistical evidence. We show how to design protocols that are robust to 
-                                an agent's strategic actions, and derive the optimal protocol in the presence of strategic entrants.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-
-        </section>
-
-        <section id="software" class="py-12">
-            <h2 class="section-title">
-                <!--<i data-lucide="code"></i>-->
-                <span>Software</span>
-            </h2>
-            <div class="card card-rose text-center">
-                <h3 class="text-xl mb-4">NPEB</h3>
-                <p class="text-sm mb-6">
-                    A Python package for empirical Bayes using nonparametric maximum likelihood
-                </p>
-                <a href="https://github.com/jake-soloff/npeb" class="btn btn-primary" target=&ldquo;blank&rdquo;>
-                    <i data-lucide="github"></i>
-                    <span>View on GitHub</span>
-                </a>
-            </div>
         </section>
     </main>
+    <footer class="bg-amber-900 text-amber-50 py-6 mt-16 text-sm">
+        <div class="px-6 flex flex-col gap-2">
 
-    <footer>
-        <div class="container">
-            <div class="contact-info mb-4">
-                <i data-lucide="map-pin"></i>
-                <span>Department of Statistics, University of Chicago</span>
-            </div>
-            <p class="text-sm">© 2025 Jake A. Soloff</p>
+
+        <!-- Text Info -->
+        <div class="mt-4">
+        <div class="mt-1">© 2025 Jake A. Soloff</div>
         </div>
+     </div>
     </footer>
 
+
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 
-<script>
+    <script>
     function toggleTldr(button) {
     // Go up to find the card, then find the tldr-content within it
     const card = button.closest('.card');
@@ -1318,7 +517,6 @@
     content.classList.toggle('expanded');
     chevron.classList.toggle('expanded');
     }
-</script>
-
+    </script>
 </body>
 </html>
