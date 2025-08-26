@@ -30,13 +30,13 @@
         }
 
         nav {
-        background-color: var(--color-amber-50);
-        width: 100%;
-        height: 8rem;  /* or whatever height you want */
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 50;
+            background-color: var(--color-amber-50);
+            width: 100%;
+            height: 8rem;  /* or whatever height you want */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
         }
 
         .nav-container {
@@ -173,7 +173,7 @@
             max-width: 1024px;
             margin: 0 auto;
             padding: 0 1rem;
-            padding-top: 10rem;
+            padding-top: 8rem;
         }
 
         .hero-section {
@@ -436,9 +436,8 @@
 <body>
 
     <!-- Top Bar -->
-     <!-- flex justify-between items-center  -->
-    <!-- <nav class="bg-amber-900 text-amber-50 w-full py-4 px-6 fixed top-0 left-0 z-50 flex justify-between items-start shadow-md"></nav> -->
-    <!-- <nav class="bg-amber-900 text-amber-50 w-full py-4 px-6 fixed top-0 left-0 z-50 flex flex-col sm:flex-row sm:items-center justify-between items-start gap-2 sm:gap-0"> -->
+    <!-- <nav class="bg-amber-900 text-amber-50 w-full py-4 px-6 fixed top-0 left-0 z-50 flex justify-between items-center"> -->
+    <!-- <nav class="bg-amber-900 text-amber-50 w-full py-4 px-6 fixed top-0 left-0 z-50 flex justify-between items-start shadow-md"> -->
     <nav class="bg-amber-900 bg-opacity-100 text-amber-50 w-full py-4 px-6 fixed top-0 left-0 z-50 flex flex-col sm:flex-row sm:items-center justify-between items-start gap-2 sm:gap-0 shadow-md">
 
         <!-- Left: Name + Title -->
@@ -463,48 +462,63 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    
+
     <main class="container">
-        <section class="flex flex-col md:flex-row items-center md:items-start md:space-x-8 text-left">
-            <img src="Jake-Soloff.jpg" alt="Jake A. Soloff"
-                 class="rounded-full object-cover border-4 border-yellow-900 mb-6 md:mb-0"
-                 style="width: 100%; max-width: 450px; height: auto; aspect-ratio: 1 / 1;" />
-            <div>
-                <h1 class="text-5xl font-bold font-serif text-amber-900">Jake A. Soloff</h1>
-                <br>
-                <p class="mt-4 text-base leading-relaxed">
-                    I am an Assistant Professor of Statistics at the 
-                    University of Michigan. My research focuses on the theory of 
-                    statistical machine learning, with the goal of creating and understanding
-		    off-the-shelf tools that are both principled and broadly applicable.
-                    <br/><br/>
-                    I received my Ph.D. in Statistics from UC Berkeley 
-                    in 2022, advised by Aditya Guntuboyina and Michael I. Jordan, 
-                    and completed a postdoc at the University of Chicago with Rina 
-                    Foygel Barber and Rebecca Willett. 
-                </p>
 
-                <br/>
+        <section id="ridoc" class="py-12">
+            <h2 class="section-title mt-12">
+                <span>Instructor at University of Michigan</span>
+            </h2>
+            <ul>
+            <li><p><a href='https://umich.instructure.com/courses/796466/' target=&ldquo;blank&rdquo;>Advanced Statistical Computing, Fall 2025</a></p>
+            </li>
+            <li><p><a href="https://umich.instructure.com/courses/781321" target=&ldquo;blank&rdquo;>Applied Linear Regression, Fall 2025</a></p>
+            </li>
+        </section>
 
-                <!-- Icon Row -->
-                <div class="flex items-center space-x-10">
-                <a href="mailto:soloff@umich.edu" class="flex items-center gap-1 hover:text-amber-100">
-                    <i data-lucide="mail"></i>
-                    <span>Email</span>
-                </a>
-                <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" target="_blank" class="flex items-center gap-1 hover:text-amber-100">
-                    <i data-lucide="library"></i>
-                    <span>Scholar</span>
-                </a>
-                <a href="https://github.com/jake-soloff" target="_blank" class="flex items-center gap-1 hover:text-amber-100">
-                    <i data-lucide="github"></i>
-                    <span>GitHub</span>
-                </a>
-                </div>
-            </div>
+        <section id="berkeley" class="py-12">
+            <h2 class="section-title mt-12">
+                <span>GSI at UC Berkeley</span>
+            </h2>
+            <ul>
+            <li><p><a href='https://data102.org/fa20/' target=&ldquo;blank&rdquo;>Data, Inference, and Decisions, Fall 2020</a></p>
+            </li>
+            <li><p>Theoretical Statistics, Spring 2019</p>
+            </li>
+            <li><p>Principles and Techniques of Data Science, Fall 2017 and Spring 2018 (Head GSI)  </p>
+            </li>
+            </ul>
 
         </section>
+
+        <section id="ridoc" class="py-12">
+            <h2 class="section-title mt-12">
+                <span>Assistant Instructor at RI Department of Corrections</span>
+            </h2>
+            <ul>
+            <li><p>Introductory Geography, Spring 2016</p>
+            </li>
+        </section>
+
+        <section id="brown" class="py-12">
+            <h2 class="section-title mt-12">
+                <span>TA at Brown University</span>
+            </h2>
+            <ul>
+            <li><p>Crime and the City, Fall 2015 (Curricular Advising Fellow)</p>
+            </li>
+            <li><p>Recent Applications of Probability and Statistics, Spring 2015 </p> 
+            </li>
+            <li><p>Crime and the City, Fall 2014 </p>
+            </li>
+            <li><p>Computational Probability and Statistics, Fall 2014</p>
+            </li>
+            </ul>
+        </section>
+        
     </main>
+
     <footer class="bg-amber-900 text-amber-50 py-6 mt-16 text-sm">
         <div class="px-6 flex flex-col gap-2">
 
