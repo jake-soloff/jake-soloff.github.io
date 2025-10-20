@@ -321,7 +321,8 @@
 
         .publication-links {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;              /* allow items to wrap to the next line */
+            gap: 0.75rem;                 /* slightly smaller spacing for narrow screens */
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 2px solid var(--color-amber-900);
@@ -363,6 +364,8 @@
     }
 
     .tldr-button {
+        flex-shrink: 0;               /* prevent squishing text */
+        white-space: nowrap;          /* keep icon and label together */
         background: none;
         border: none;
         color: var(--color-amber-900);
@@ -498,13 +501,52 @@
             <div class="space-y-6">
                 <!-- First publication -->
                 <div class="card">
+                    <h3 class="text-xl mb-2">A frequentist local false discovery rate</h3>
+                    <p class="text-sm mb-2">D. Xiang, J. A. Soloff, and W. Fithian</p>
+                    <p class="text-sm italic mb-4">To appear in Biometrika</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2502.16005" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>abstract</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                The local false discovery rate (lfdr) of Efron et al. (2001) enjoys major conceptual and decision-theoretic advantages over 
+                                the false discovery rate (FDR) as an error criterion in multiple testing, but is only well-defined in Bayesian models where 
+                                the truth status of each null hypothesis is random. We define a frequentist counterpart to the lfdr based on the relative 
+                                frequency of nulls at each point in the sample space. The frequentist lfdr is defined without reference to any prior, but 
+                                preserves several important properties of the Bayesian lfdr: For continuous test statistics, \(\text{lfdr}(t)\) gives the probability, 
+                                conditional on observing some statistic equal to \(t\), that the corresponding null hypothesis is true. Evaluating the lfdr at 
+                                an individual test statistic also yields a calibrated forecast of whether its null hypothesis is true. Finally, thresholding 
+                                the lfdr at \( \frac{1}{1+\lambda} \) gives the best separable rejection rule under the weighted classification loss where Type I errors are \(\lambda\)
+                                times as costly as Type II errors. The lfdr can be estimated efficiently using parametric or non-parametric methods, and a 
+                                closely related error criterion can be provably controlled in finite samples under independence assumptions. Whereas the FDR 
+                                measures the average quality of all discoveries in a given rejection region, our lfdr measures how the quality of discoveries 
+                                varies across the rejection region, allowing for a more fine-grained analysis without requiring the introduction of a prior.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
                     <h3 class="text-xl mb-2">Can a calibration metric be both testable and actionable?</h3>
                     <p class="text-sm mb-2">R. Rossellini, J. A. Soloff, R. F. Barber, Z. Ren, and R. Willett</p>
-                    <p class="text-sm italic mb-4">To appear in the 38th Annual Conference on Learning Theory (COLT 2025)</p>
+                    <p class="text-sm italic mb-4">Proceedings of the 38th Conference on Learning Theory (COLT 2025)</p>
                     <div class="publication-links">
                         <a href="https://arxiv.org/abs/2502.19851" class="publication-link" target=&ldquo;blank&rdquo;>
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
+                        </a>
+                        <a href="https://proceedings.mlr.press/v291/rossellini25a.html" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
                         </a>
                         <a href="https://github.com/rrross/CutoffCalibration" class="publication-link" target=&ldquo;blank&rdquo;>
                             <i data-lucide="github"></i>
@@ -778,41 +820,6 @@
                                 proposed methods provide guaranteed stability, with no assumptions on data distributions and no dependence on the total number 
                                 of candidates to be ranked. Experiments on real-world data confirm that the proposed methods offer stability without compromising 
                                 the informativeness of the output.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">A frequentist local false discovery rate</h3>
-                    <p class="text-sm mb-2">D. Xiang, J. A. Soloff, and W. Fithian</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2502.16005" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                The local false discovery rate (lfdr) of Efron et al. (2001) enjoys major conceptual and decision-theoretic advantages over 
-                                the false discovery rate (FDR) as an error criterion in multiple testing, but is only well-defined in Bayesian models where 
-                                the truth status of each null hypothesis is random. We define a frequentist counterpart to the lfdr based on the relative 
-                                frequency of nulls at each point in the sample space. The frequentist lfdr is defined without reference to any prior, but 
-                                preserves several important properties of the Bayesian lfdr: For continuous test statistics, \(\text{lfdr}(t)\) gives the probability, 
-                                conditional on observing some statistic equal to \(t\), that the corresponding null hypothesis is true. Evaluating the lfdr at 
-                                an individual test statistic also yields a calibrated forecast of whether its null hypothesis is true. Finally, thresholding 
-                                the lfdr at \( \frac{1}{1+\lambda} \) gives the best separable rejection rule under the weighted classification loss where Type I errors are \(\lambda\)
-                                times as costly as Type II errors. The lfdr can be estimated efficiently using parametric or non-parametric methods, and a 
-                                closely related error criterion can be provably controlled in finite samples under independence assumptions. Whereas the FDR 
-                                measures the average quality of all discoveries in a given rejection region, our lfdr measures how the quality of discoveries 
-                                varies across the rejection region, allowing for a more fine-grained analysis without requiring the introduction of a prior.
                             </p>
                         </div>
                     </div>
