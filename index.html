@@ -201,6 +201,50 @@
         @media (max-width: 768px) {
             .container {
                 padding-top: 12rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            section {
+                padding: 2rem 0;
+            }
+
+            .card {
+                padding: 1rem 0;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            /* Fix the bio section alignment */
+            #about > div {
+                text-align: center;
+            }
+            
+            #about img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            #about > div > div {
+                text-align: left;
+            }
+            
+            #about h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+            
+            .publication-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* @media (max-width: 768px) {
+            .container {
+                padding-top: 12rem;
             }
             
             section {
@@ -215,7 +259,7 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-        }
+        } */
     </style>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -340,7 +384,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <h3 class="text-xl mb-2">Stabilizing black-box model selection with the inflated argmax</h3>
                     <p class="text-sm mb-2">M. Adrian, J. A. Soloff, and R. Willett</p>
