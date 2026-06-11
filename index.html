@@ -272,7 +272,6 @@
         } */
     </style>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
@@ -738,6 +737,40 @@
 
             <div class="space-y-6">
 
+                <div class="card">
+                    <h3 class="text-xl mb-2">Estimating the local false discovery rate under an unknown symmetric null</h3>
+                    <p class="text-sm mb-2">D. Xiang, W. Fithian, N. Ignatiadis, J. A. Soloff, and A. Weinstein</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2606.11548" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>abstract</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                This paper is concerned with estimating the local false discovery rate (lfdr) in a two-groups model where the only 
+                                assumption regarding the null distribution is symmetry about zero. Our motivation comes from the contemporary framework 
+                                for multiple hypothesis testing, particularly relevant in variable selection problems, which transforms any user-specified 
+                                scores into statistics whose null distributions are symmetric about zero, whereas enrichment to the right of zero is 
+                                generally expected for the non-nulls. While modern methods such as the knockoff filter (Barber and Candes; 2015) are able 
+                                to exploit the null property for controlling the false discovery rate (FDR), an arguably more appropriate goal is to target 
+                                control of the local false discovery rate for the rejected hypotheses, as proposed in Soloff et al. (2024) where the standard 
+                                two-groups model (known f_0 and independence) is analyzed. Here, we take a step in this direction and propose to estimate the 
+                                lfdr by targeting the surrogate density ratio f(-w)/f(w), for w>0, where f is the marginal density in the aforementioned 
+                                "stripped-down" two-groups model. We study several estimators and propose a logistic regression based method with natural 
+                                cubic spline basis. We also show that any consistent estimator of this surrogate yields asymptotic lfdr control of the 
+                                multiple testing procedure that thresholds the estimate at the nominal level.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="card">
                     <h3 class="text-xl mb-2">Assumption-free stability for ranking problems</h3>
                     <p class="text-sm mb-2">R. Liang, J. A. Soloff, R. F. Barber, and R. Willett</p>
