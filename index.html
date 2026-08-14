@@ -359,6 +359,40 @@
 
             <div class="space-y-6">
                 <!-- First publication -->
+                    <div class="card">
+                    <h3 class="text-xl mb-2">Stability via resampling: Statistical problems beyond the real line</h3>
+                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
+                    <p class="text-sm italic mb-4">To appear in the Electronic Journal of Statistics</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2405.09511" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
+                            <i data-lucide="bar-chart-3"></i>
+                            <span>experiments</span>
+                        </a> -->
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>abstract</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                Model averaging techniques based on resampling methods (such as bootstrapping or subsampling) have been utilized across many areas of 
+                                statistics, often with the explicit goal of promoting stability in the resulting output. We provide a general, finite-sample theoretical 
+                                result guaranteeing the stability of bagging when applied to algorithms that return outputs in a general space, so that the output is 
+                                not necessarily a real-valued &mdash; for example, an algorithm that estimates a vector of weights or a density function. We empirically 
+                                assess the stability of bagging on synthetic and real-world data for a range of problem settings, including causal inference, nonparametric 
+                                regression, and Bayesian model selection.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="card">
                     <h3 class="text-xl mb-2">Principal-agent hypothesis testing</h3>
                     <p class="text-sm mb-2">S. Bates, M. I. Jordan, M. Sklar, and J. A. Soloff</p>
@@ -937,38 +971,6 @@
                                 depend on both \(Y\) and \(Z\), providing the analyst with significant flexibility in constructing a powerful test. Our test offers 
                                 finite-sample Type I error control, and provably achieves high power against a large class of alternatives that are not too 
                                 close to the null. We validate our theoretical findings through a series of simulations and real data experiments.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Stability via resampling: Statistical problems beyond the real line</h3>
-                    <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2405.09511" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <!-- <a href="https://github.com/jake-soloff/stable-argmax-experiments" class="publication-link">
-                            <i data-lucide="bar-chart-3"></i>
-                            <span>experiments</span>
-                        </a> -->
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Model averaging techniques based on resampling methods (such as bootstrapping or subsampling) have been utilized across many areas of 
-                                statistics, often with the explicit goal of promoting stability in the resulting output. We provide a general, finite-sample theoretical 
-                                result guaranteeing the stability of bagging when applied to algorithms that return outputs in a general space, so that the output is 
-                                not necessarily a real-valued &mdash; for example, an algorithm that estimates a vector of weights or a density function. We empirically 
-                                assess the stability of bagging on synthetic and real-world data for a range of problem settings, including causal inference, nonparametric 
-                                regression, and Bayesian model selection.
                             </p>
                         </div>
                     </div>
