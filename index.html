@@ -358,7 +358,42 @@
             </h2>
 
             <div class="space-y-6">
-                <!-- First publication -->
+                    <!-- First publication -->
+                    <div class="card">
+                        <h3 class="text-xl mb-2">Calibration without labels in multiple testing</h3>
+                        <p class="text-sm mb-2">A. S. Wadekar and J. A. Soloff</p>
+                        <p class="text-sm italic mb-4">To appear in Advances in Neural Information Processing Systems 40 (NeurIPS 2026)</p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/abs/2606.19737" class="publication-link" target=&ldquo;blank&rdquo;>
+                                <i data-lucide="file-text"></i>
+                                <span>preprint</span>
+                            </a>
+                            <button class="tldr-button" onclick="toggleTldr(this)">
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                                <span>abstract</span>
+                            </button>
+                        </div>
+                
+                        <div class="tldr-content">
+                            <div class="p-4">
+                                <p class="text-sm">
+                                    Large-scale hypothesis testing supports probability claims about individual hypotheses, as in empirical Bayes 
+                                    methods for estimating local false discovery rates. We study how such claims can be interpreted as approximately 
+                                    calibrated forecasts of the null hypothesis, yielding interpretable error probabilities even under model 
+                                    misspecification. Our approach draws conceptual inspiration from probabilistic forecasting but addresses a 
+                                    different challenge: unlike forecasting, where labels are eventually observed, in multiple testing the ground 
+                                    truth is never revealed, so calibration must be assessed stochastically and established indirectly. We address 
+                                    this challenge by constructing a set of pseudo-labels, derived from the spacings of ordered \(p\)-values, which 
+                                    have the local false discovery rate as their regression target. Our construction unlocks existing tools for 
+                                    assessing and performing post-hoc calibration in multiple testing. Notably, we find on a large-scale empirical 
+                                    survey of published psychology and neuroscience literature that the \(q\)-value, a popular error measure based 
+                                    on the false discovery rate, can be severely miscalibrated.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="card">
                     <h3 class="text-xl mb-2">Stability via resampling: Statistical problems beyond the real line</h3>
                     <p class="text-sm mb-2">J. A. Soloff, R. F. Barber, and R. Willett</p>
@@ -841,40 +876,6 @@
                                 is a widely used post-processing method for improving calibration. Building on deterministic degrees-of-freedom 
                                 bounds, we derive, to our knowledge, the first nontrivial distribution-free guarantee on the Expected Calibration 
                                 Error (ECE) of isotonic regression. This ECE bound is fully model-free and distribution-free, only assuming \(Y\in\{0,1\}\).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card">
-                    <h3 class="text-xl mb-2">Calibration without labels in multiple testing</h3>
-                    <p class="text-sm mb-2">A. S. Wadekar and J. A. Soloff</p>
-                    <div class="publication-links">
-                        <a href="https://arxiv.org/abs/2606.19737" class="publication-link" target=&ldquo;blank&rdquo;>
-                            <i data-lucide="file-text"></i>
-                            <span>preprint</span>
-                        </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>abstract</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Large-scale hypothesis testing supports probability claims about individual hypotheses, as in empirical Bayes 
-                                methods for estimating local false discovery rates. We study how such claims can be interpreted as approximately 
-                                calibrated forecasts of the null hypothesis, yielding interpretable error probabilities even under model 
-                                misspecification. Our approach draws conceptual inspiration from probabilistic forecasting but addresses a 
-                                different challenge: unlike forecasting, where labels are eventually observed, in multiple testing the ground 
-                                truth is never revealed, so calibration must be assessed stochastically and established indirectly. We address 
-                                this challenge by constructing a set of pseudo-labels, derived from the spacings of ordered \(p\)-values, which 
-                                have the local false discovery rate as their regression target. Our construction unlocks existing tools for 
-                                assessing and performing post-hoc calibration in multiple testing. Notably, we find on a large-scale empirical 
-                                survey of published psychology and neuroscience literature that the \(q\)-value, a popular error measure based 
-                                on the false discovery rate, can be severely miscalibrated.
                             </p>
                         </div>
                     </div>
